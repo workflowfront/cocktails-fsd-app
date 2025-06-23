@@ -1,0 +1,86 @@
+// стили для страницы коктейля
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  padding: 32px;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+.info {
+  flex: 2;
+}
+.title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 12px;
+}
+.instructions {
+  margin: 16px 0;
+}
+.ingredients {
+  margin-top: 12px;
+  ul {
+    margin: 0;
+    padding-left: 18px; // отступ для списка
+  }
+}
+.cocktailRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 32px;
+  position: relative; // для абсолютного позиционирования картинки
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+}
+.cocktailContent {
+  flex: 1;
+  min-width: 0;
+  margin-right: 320px; // место для картинки справа
+  @media (max-width: 900px) {
+    margin-right: 0;
+  }
+}
+.thumb {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%); // центрирование по вертикали
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07); // тень
+  }
+  @media (max-width: 900px) {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-bottom: 16px;
+    align-self: center;
+    transform: none;
+  }
+}
